@@ -9,6 +9,8 @@ http {
     listen ${PORT};
     server_name _;
 
+    resolver [fd12::10] ipv6=on valid=1s;
+    
     location / {
         auth_basic	"Restricted";
         auth_basic_user_file	/etc/nginx/.htpasswd;
